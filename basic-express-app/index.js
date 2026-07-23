@@ -16,7 +16,8 @@ const app = express();
 //app.set('views', 'views');
 
 app.set('view engine', 'ejs');
-app.set('views', 'views');
+//app.set('views', 'views');
+app.set('views', path.join(__dirname, 'views')); //this works when debbug mode is active
 
 
 const adminRoutes = require('./routes/admin');

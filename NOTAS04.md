@@ -40,3 +40,6 @@ Due to a (temporary) breaking change introduced by the library authors (of the p
   * Controllers
     * Connecting your models and your views
     * Contains the "in-between" logic
+
+# Database
+* npm install --save pg
