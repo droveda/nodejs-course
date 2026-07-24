@@ -43,3 +43,29 @@ Due to a (temporary) breaking change introduced by the library authors (of the p
 
 # Database
 * npm install --save pg
+
+```sql
+CREATE TABLE products (
+	id serial4 NOT NULL,
+	title varchar(255) NOT NULL,
+	price float8 NOT NULL,
+	description varchar(255) NOT NULL,
+	imageurl varchar(255) NOT NULL,
+	CONSTRAINT products_pkey PRIMARY KEY (id)
+);
+```
+
+## Sequalize
+* Focus on Node.js not on SQL
+* Sequelize is An Object Relacional Mapping Library (ORM)
+* npm install --save sequelize pg
+
+```javaScript
+const { Sequelize } = require('sequelize');
+
+const sequelize = new Sequelize('nodejs-course', 'postgres', 'admin', {
+  host: 'localhost',
+  dialect: 'postgres',
+});
+```
+
