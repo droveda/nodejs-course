@@ -59,6 +59,7 @@ CREATE TABLE products (
 * Focus on Node.js not on SQL
 * Sequelize is An Object Relacional Mapping Library (ORM)
 * npm install --save sequelize pg
+* Sequelize Official Docs: http://docs.sequelizejs.com/
 
 ```javaScript
 const { Sequelize } = require('sequelize');
