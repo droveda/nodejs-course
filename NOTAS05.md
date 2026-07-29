@@ -26,5 +26,14 @@ npm install --save mongoose
 ## What is a Cookie?
 * A Cookie is set via Response Header.  
 * A Cookie can store information in the browser.  
-* Cookies are stored on the client-side!
+* IMPORTANT: Cookies are stored on the client-side!
 * User -> front end (Views) -> Server (Node App) -> Set the cookie via Response Header
+
+## What is a Session?
+* User -> front end (Views) -> Server (Node App) -> Session
+* A Session can be stored in a Database
+* We will associate with user/client via cookie (In the cookie we will store the ID of the Session) for security we will store the hash of the ID
+* IMPORTANT: Sessions are stored on the server-side!!!!
+
+`npm install --save express-session`   
+`npm install --save connect-mongodb-session`  
