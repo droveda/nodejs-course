@@ -14,7 +14,8 @@ exports.getProducts = async (req, res, next) => {
                     prods: products, 
                     pageTitle: 'All Products', 
                     path: '/products', 
-                    hasProducts: products.length > 0
+                    hasProducts: products.length > 0,
+                    isAuthenticated: req.session.isLoggedIn
                 }
             );
         })
@@ -33,7 +34,8 @@ exports.getProduct = (req, res, next) => {
                 {
                     pageTitle: product.title,
                     path: '/products',
-                    product: product
+                    product: product,
+                    isAuthenticated: req.session.isLoggedIn
                 }
             );
         })
@@ -49,7 +51,8 @@ exports.getIndex = (req, res, next) => {
                     prods: products, 
                     pageTitle: 'Shop', 
                     path: '/', 
-                    hasProducts: products.length > 0
+                    hasProducts: products.length > 0,
+                    isAuthenticated: req.session.isLoggedIn
                 }
             );
         })
@@ -69,7 +72,8 @@ exports.getCart = (req, res, next) => {
                     {
                         path: '/cart',
                         pageTitle: 'Your Cart',
-                        products: user.cart.items
+                        products: user.cart.items,
+                        isAuthenticated: req.session.isLoggedIn
                     }
                 );
         })
@@ -150,7 +154,8 @@ exports.getOrders = (req, res, next) => {
                 {
                     path: '/orders',
                     pageTitle: 'Your Orders',
-                    orders: orders
+                    orders: orders,
+                    isAuthenticated: req.session.isLoggedIn
                 }
             );
         })
