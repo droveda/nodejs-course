@@ -9,6 +9,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
+const csrf = require('csurf');
+const flash = require('connect-flash');
 
 const User = require('./models/user');
 
@@ -19,6 +21,8 @@ const store = new MongoDBStore({
     uri: uri,
     collection: 'sessions'
 });
+
+const csrfProtection = csrf();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); //this works when debbug mode is active
@@ -40,6 +44,10 @@ app.use(session({
     store: store
 }));
 
+app.use(csrfProtection);
+
+app.use(flash());
+
 app.use((req, res, next) => {
     if (!req.session.user) {
         return next();
@@ -54,6 +62,12 @@ app.use((req, res, next) => {
         });
 });
 
+app.use((req, res, next) => {
+    res.locals.isAuthenticated = req.session.isLoggedIn;
+    res.locals.csrfToken = req.csrfToken();
+    next();
+});
+
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
@@ -64,22 +78,6 @@ app.use(errorController.get404Page);
 mongoose.connect(uri)
     .then(result => {
         console.log('CONNECTED!');
-
-        User.findOne()
-            .then(user => {
-                if (!user) {
-                    const user = new User({
-                        name: 'Max',
-                        email: 'max@email.com',
-                        cart: {
-                            items: []
-                        }
-                    });
-                    user.save();
-                } 
-            })
-
-       
         app.listen(3000);
     })
     .catch(err => console.log(err));
