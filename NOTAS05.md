@@ -70,3 +70,18 @@ And most importantly, the general principle explained in this course is package 
 
 ## Error messages and flash messages
 npm install --save connect-flash  
+
+
+### Useful resources:
+* Bcrypt Official Docs: https://github.com/dcodeIO/bcrypt.js
+* More on CSRF Attacks: https://www.acunetix.com/websitesecurity/csrf-attacks/
+
+
+# Sending Emails
+
+* Using SendGrid
+npm install --save nodemailer nodemailer-sendgrid-transport   
+
+
+
+# Advanced Authentication
