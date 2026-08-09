@@ -82,6 +82,14 @@ npm install --save connect-flash
 * Using SendGrid
 npm install --save nodemailer nodemailer-sendgrid-transport   
 
-
-
 # Advanced Authentication
+
+# Input Validation
+use package: `express-validator`.  
+npm install --save express-validator.  
+
+
+
+# Useful resources:
+* Express-Validator Docs: https://express-validator.github.io/docs/
+* Validator.js (which is used behind the scenes) Docs: https://github.com/chriso/validator.js
