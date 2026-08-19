@@ -37,3 +37,13 @@ Error Handling in Express.js - Official Docs: https://expressjs.com/en/guide/err
 * Multer Official Docs: https://github.com/expressjs/multer
 * Streaming Files: https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93
 * Generating PDFs with PDFKit: http://pdfkit.org/docs/getting_started.html
+
+# Pagination
+
+
+# Adding Payments
+* Stripe
+
+
+# Rest APIs
+* Example: Build a Complete RESTful API from Scratch: https://academind.com/learn/node-js/building-a-restful-api-with/
