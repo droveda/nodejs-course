@@ -47,3 +47,27 @@ Error Handling in Express.js - Official Docs: https://expressjs.com/en/guide/err
 
 # Rest APIs
 * Example: Build a Complete RESTful API from Scratch: https://academind.com/learn/node-js/building-a-restful-api-with/
+
+
+# Async / Await
+Working with Async Code more Elegantly.  
+
+What?  
+Asynchronous Requests in a Synchronous Way*.  
+* Only by the way it looks, NOT by the way it bahaves.    
+
+Async-await - More Details: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function    
+
+* See feed.js on the Rest Api Project to see an example of async and await
+
+
+# WebsSckets
+Real-Time Web Services with WebSockets.  
+Pushing Data from Server to Client.  
+
+If we want the server to send information to the client we use WebSockets instead of HTTP.  
+
+* With HTTP => Request/Response.  
+* With WebSockers => Server PUSH Data to the Client.  
+* npm install --save socket.io (install this on the server)
+* npm install --save socket.io-client (install this on the client (front-end))

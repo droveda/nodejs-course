@@ -10,6 +10,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const multer = require('multer');
 
+const { Server } = require('socket.io');
+
 const feedRoutes = require('./routes/feed');
 const authRoutes = require('./routes/auth');
 
@@ -67,6 +69,17 @@ app.use((error, req, res, next) => {
 mongoose.connect(uri)
     .then(result => {
         console.log('CONNECTED!');
-        app.listen(8080);
+        const server = app.listen(8080);
+      
+        const io = new Server(server, {
+            cors: {
+            origin: 'http://localhost:3000',
+            methods: ['GET', 'POST']
+            }
+        });
+
+        io.on('connection', socket => {
+            console.log('Client connected!');
+        });
     })
     .catch(err => console.log(err));
