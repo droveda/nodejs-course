@@ -71,3 +71,8 @@ If we want the server to send information to the client we use WebSockets instea
 * With WebSockers => Server PUSH Data to the Client.  
 * npm install --save socket.io (install this on the server)
 * npm install --save socket.io-client (install this on the client (front-end))
+
+
+## WebSockets Useful Resources
+* Socket.io Official Docs: https://socket.io/get-started/chat/
+* Alternative Websocket Library: https://www.npmjs.com/package/express-ws
