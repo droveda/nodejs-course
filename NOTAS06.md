@@ -76,3 +76,9 @@ If we want the server to send information to the client we use WebSockets instea
 ## WebSockets Useful Resources
 * Socket.io Official Docs: https://socket.io/get-started/chat/
 * Alternative Websocket Library: https://www.npmjs.com/package/express-ws
+
+
+# GraphQL
+* npm install --save graphql
+* npm install --save express-graphql
+* http://localhost:8080/graphql
