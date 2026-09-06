@@ -123,3 +123,9 @@ If we want the server to send information to the client we use WebSockets instea
   * instead of const server = app.listen(process.env.PORT || 8080);
     * const server = https.createServer({key: privateKey, cert: certificate}, app).listen(8080);
 * heroku with git -> to deploy the application. It is very simple
+* npm run build (This is to deploy the front-end as a static web application)
+* Herokus Docs: https://devcenter.heroku.com/categories/reference
+* Deploying SPAs (like our React App): https://medium.com/@baphemot/understanding-react-deployment-5a717d4378fd
+* Amazon Web Services: https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
+* DigitalOcean: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
+* And of course everything Google yields on "nodejs hosting"
