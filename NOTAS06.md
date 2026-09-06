@@ -82,3 +82,28 @@ If we want the server to send information to the client we use WebSockets instea
 * npm install --save graphql
 * npm install --save express-graphql
 * http://localhost:8080/graphql
+* Detailed Guide on GraphQL: https://graphql.org
+
+# Deploying your application
+* Preparing for deployment
+* Deployment Steps & Config
+* Security
+
+## Which Kind of Application
+* Server Side rendering views
+  * vanilla html
+  * templateing engine (e.g. ejs)
+* APIs
+  * REST
+  * GraphQL
+* The two has the same hosting Requirements
+
+### Deployment Preparations
+* Use Environment Variables
+  * Avoid hard-coded values in your code
+* Use Production API Keys
+* Reduce Error Output Details (Do not send sensitive info to yours users)
+* Set Secure Response Headers (Implement Best Practices)
+* Add Asset Compression (Reduce Response Size)
+* Configure Logging (Stay up to date about what is happening)
+* use SSL/TLS (Encrypt data in transit)

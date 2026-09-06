@@ -22,8 +22,8 @@ class SinglePost extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        query: ` {
-            post(id: "${postId}") {
+        query: `query FetchSinglePost($postId: ID!) {
+            post(id: $postId) {
               title
               content
               imageUrl
@@ -33,7 +33,10 @@ class SinglePost extends Component {
               createdAt
             }
           }
-          `
+          `,
+          variables: {
+            postId: postId
+          }
       })
     })
       .then(res => {

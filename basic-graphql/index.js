@@ -4,7 +4,7 @@ const { webcrypto } = require('crypto');
 global.crypto = webcrypto;
 
 const path = require('path');
-const fs = require('fs');
+const { clearImage } = require('./util/file');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -119,7 +119,3 @@ mongoose.connect(uri)
     })
     .catch(err => console.log(err));
 
-const clearImage = filePath => {
-    filePath = path.join(__dirname, '..', filePath);
-    fs.unlink(filePath, err => console.log(err));
-}
