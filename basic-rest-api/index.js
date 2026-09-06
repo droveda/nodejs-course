@@ -4,11 +4,13 @@ const { webcrypto } = require('crypto');
 global.crypto = webcrypto;
 
 const path = require('path');
+const fs = require('fs');
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const multer = require('multer');
+const morgan = require('morgan');
 
 const feedRoutes = require('./routes/feed');
 const authRoutes = require('./routes/auth');
@@ -52,8 +54,12 @@ app.use((req, res, next) => {
     next();
 });
 
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
+
 app.use('/feed', feedRoutes);
 app.use('/auth', authRoutes);
+
+app.use(morgan('combined', {stream: accessLogStream}));
 
 app.use((error, req, res, next) => {
     console.log(error);
@@ -67,7 +73,7 @@ app.use((error, req, res, next) => {
 mongoose.connect(uri)
     .then(result => {
         console.log('CONNECTED!');
-        const server = app.listen(8080);
+        const server = app.listen(process.env.PORT || 8080);
         const io = require('./socket').init(server);
 
         io.on('connection', socket => {

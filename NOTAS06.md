@@ -103,7 +103,23 @@ If we want the server to send information to the client we use WebSockets instea
   * Avoid hard-coded values in your code
 * Use Production API Keys
 * Reduce Error Output Details (Do not send sensitive info to yours users)
+  * env variable -> NODE_ENV=production
 * Set Secure Response Headers (Implement Best Practices)
+  * npm install --save helmet
+    * const helmet = require('helmet');
+    * app.use(helmet());
 * Add Asset Compression (Reduce Response Size)
+  * npm install --save compression
+  * const compression = require('compression')
+  * app.use(compression())
 * Configure Logging (Stay up to date about what is happening)
-* use SSL/TLS (Encrypt data in transit)
+  * npm install --save morgan
+  * For a more advanced/ detailed approach on logging (with higher control), see this article: https://blog.risingstack.com/node-js-logging-tutorial/
+* Use SSL/TLS (Encrypt data in transit)
+  * openssl req -nodes -new -x509 -keyout server.key -out server.cert
+  * const https = require('https);
+  * const privateKey = fs.readFileSync('server.key');
+  * const certificate = fs.readFileSync('server.cert');
+  * instead of const server = app.listen(process.env.PORT || 8080);
+    * const server = https.createServer({key: privateKey, cert: certificate}, app).listen(8080);
+* heroku with git -> to deploy the application. It is very simple
