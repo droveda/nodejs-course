@@ -1,2 +1,5 @@
 ::ffff:127.0.0.1 - - [06/Sep/2026:18:07:38 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/feed/posts" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0"
 ::ffff:127.0.0.1 - - [06/Sep/2026:18:07:39 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/feed/posts" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:155.0) Gecko/20100101 Firefox/155.0"
+::ffff:127.0.0.1 - - [07/Sep/2026:11:46:51 +0000] "GET /auth/signup HTTP/1.1" 404 150 "-" "PostmanRuntime/2.4.3"
+::ffff:127.0.0.1 - - [07/Sep/2026:11:47:09 +0000] "POST /auth/signup HTTP/1.1" 404 151 "-" "PostmanRuntime/2.4.3"
+::ffff:127.0.0.1 - - [07/Sep/2026:12:10:37 +0000] "GET /auth/user-status?userId=6a9ea47fa361074c6d61b0eb HTTP/1.1" 404 155 "-" "PostmanRuntime/2.4.3"
