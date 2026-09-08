@@ -72,3 +72,7 @@ Promises in Core APIs.
 * Import/Export Syntax for modern JavaScript in the Browser.  
 * export const doSomething = () => { ... };
 * import { doSomething } from 'my-file';
+
+### References
+More on Node & ES Modules: https://nodejs.org/dist/latest-v14.x/docs/api/esm.html
+
