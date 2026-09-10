@@ -55,4 +55,9 @@ Take a look at `basic-type-script-01` folder.
 * npm init
 * npm install --save express
 * npm install --save body-parser
+* npm install --save-dev @types/node (provides typescript translations for javascript features lets say)
+* npm install --save-dev @types/express
+* npm install --save-dev @types/body-parser
 
+In addition, you can find a more complex Node TypeScript project/ project setup here: https://github.com/Microsoft/TypeScript-Node-Starter#typescript-node-starter   
+This may serve as an additional inspiration on how you can build Node TypeScript projects.  
